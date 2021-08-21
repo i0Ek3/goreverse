@@ -7,14 +7,22 @@
 package goreverse
 
 
-// Reverse reverses []byte by interval left and right.
-func Reverse(b []byte, left, right int) string {
+// ReverseWithInterval reverses []byte by interval left and right.
+func ReverseWithInterval(b []byte, left, right int) string {
     for left < right {
         b[left], b[right] = b[right], b[left]
         left++
         right--
     }
     return string(b)
+}
+
+// Reverse reverses given res
+func Reverse(res []int) []int {
+    for i := 0; i < len(res)/2; i++ {
+        res[i], res[len(res)-i-1] = res[len(res)-i-1], res[i]
+    }
+    return res
 }
 
 /*

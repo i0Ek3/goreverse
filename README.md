@@ -18,8 +18,11 @@ import (
 )
 
 func main() {
-    b := []byte{}
-    gr.Reverse(b, 0, 2)
+    b := "test"
+    gr.ReverseWithInterval([]byte(b), 0, 2)
+
+    res := []int{1, 2, 3}
+    gr.Reverse(res)
 }
 
 ```

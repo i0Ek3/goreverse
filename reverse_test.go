@@ -6,10 +6,18 @@ import (
     "github.com/i0Ek3/asrt"
 )
 
-func TestReverse(t *testing.T) {
+func TestReverseWithInterval(t *testing.T) {
     b := "hello"
-    got := Reverse([]byte(b), 0, 4)
+    got := ReverseWithInterval([]byte(b), 0, 4)
     want := string(b)
+
+    asrt.Equal(t, got, want)
+}
+
+func TestReverse(t *testing.T) {
+    res := []int{1, 2, 3, 4, 5}
+    got := Reverse(res)
+    want := []int{5, 4, 3, 2, 1}
 
     asrt.Equal(t, got, want)
 }
