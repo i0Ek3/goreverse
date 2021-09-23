@@ -29,7 +29,7 @@ func main() {
 
 ## TODO
 
-- support reverse any type data, just like interface{}
+- [x] Go generic support[WIP]
 
 
 ## Contributing

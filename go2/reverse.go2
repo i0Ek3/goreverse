@@ -6,6 +6,9 @@
 
 package goreverse
 
+type Enable interface {
+    type int, int64, string
+}
 
 // ReverseWithInterval reverses []byte by interval left and right.
 func ReverseWithInterval(b []byte, left, right int) string {
@@ -25,14 +28,12 @@ func Reverse(res []int) []int {
     return res
 }
 
-/*
 // ReverseAny reverses any type value with interval left and right.
-func ReverseAny[T any](v T, left, right int) string {
+func ReverseAny[T Enable](v []T, left, right int) []T {
     for left < right {
         v[left], v[right] = v[right], v[left]
         left++
         right--
     }
-    return v.(string)
+    return v 
 }
-*/
